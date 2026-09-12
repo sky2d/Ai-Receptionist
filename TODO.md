@@ -14,8 +14,8 @@ This file tracks the implementation progress of the AI Receptionist platform.
 - [x] Establish multitenancy boundaries using `business_id`.
 
 ## Phase 3: AI agent foundation
-- [ ] Implement the core `AgentInterface` and the internal memory schema.
-- [ ] Integrate a base LLM provider (e.g., OpenAI/Anthropic) behind the abstraction layer.
+- [x] Implement the core `AgentInterface` and the internal memory schema.
+- [x] Integrate a base LLM provider (e.g., OpenAI/Anthropic) behind the abstraction layer (Skeleton manager created).
 - [ ] Develop the Conversation Engine to handle message routing.
 
 ## Phase 4: Tool calling

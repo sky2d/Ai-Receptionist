@@ -19,9 +19,9 @@ This file tracks the implementation progress of the AI Receptionist platform.
 - [ ] Develop the Conversation Engine to handle message routing.
 
 ## Phase 4: Tool calling
-- [ ] Implement the Tool Registry.
-- [ ] Build core domain services (e.g., `AppointmentService`, `CustomerService`).
-- [ ] Map LLM function calls to tool execution logic.
+- [x] Implement the Tool Registry.
+- [x] Build core domain services (e.g., `AppointmentService`, `CustomerService`).
+- [x] Map LLM function calls to tool execution logic.
 
 ## Phase 5: Frontend Dashboard Foundation
 - [ ] Set up Next.js app routing for the admin dashboard.

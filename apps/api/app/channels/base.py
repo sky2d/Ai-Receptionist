@@ -1,18 +1,14 @@
-from abc import ABC, abstractmethod
-from pydantic import BaseModel
+from typing import Protocol, Any, Dict
 
-class NormalizedMessage(BaseModel):
-    channel_id: str
-    tenant_id: str
-    user_identifier: str
-    content: str
-    metadata: dict = {}
-
-class ChannelInterface(ABC):
-    @abstractmethod
-    async def process_incoming(self, raw_payload: dict) -> NormalizedMessage:
-        pass
-
-    @abstractmethod
-    async def send_outgoing(self, message: str, to: str) -> bool:
-        pass
+class BaseChannel(Protocol):
+    """
+    Protocol for any inbound/outbound communication channel (SMS, WebChat, Voice, etc.)
+    """
+    
+    async def receive_message(self, payload: Dict[str, Any]) -> Any:
+        """Parses the raw incoming payload into a NormalizedMessage format."""
+        ...
+        
+    async def send_message(self, business_id: str, to: str, content: str) -> bool:
+        """Sends an outbound message back through the channel."""
+        ...

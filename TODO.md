@@ -29,19 +29,19 @@ This file tracks the implementation progress of the AI Receptionist platform.
 - [x] Create shared components with shadcn/ui.
 
 ## Phase 6: Google Calendar
-- [ ] Implement the generic `CalendarProvider` interface.
-- [ ] Build the `GoogleCalendarAdapter` integration.
-- [ ] Enable the agent to check availability, book, and cancel appointments.
+- [x] Implement the generic `CalendarProvider` interface.
+- [x] Build the `GoogleCalendarAdapter` integration.
+- [x] Enable the agent to check availability, book, and cancel appointments.
 
 ## Phase 7: Web chat
-- [ ] Build the Next.js chat interface for website embedding.
-- [ ] Implement the `WebChatChannel` adapter on the backend.
-- [ ] Set up real-time bidirectional communication (WebSockets).
+- [x] Build the Next.js chat interface for website embedding.
+- [x] Implement the `WebChatChannel` adapter on the backend.
+- [x] Set up real-time bidirectional communication (WebSockets).
 
 ## Phase 8: SMS
-- [ ] Implement the `SMSChannel` adapter.
-- [ ] Integrate with an SMS provider (e.g., Twilio) via webhooks.
-- [ ] Normalize incoming SMS payloads into the `NormalizedMessage` format.
+- [x] Implement the `SMSChannel` adapter.
+- [x] Integrate with an SMS provider (e.g., Twilio) via webhooks.
+- [x] Normalize incoming SMS payloads into the `NormalizedMessage` format.
 
 ## Phase 9: Voice
 - [ ] Implement the Voice Gateway and Voice Provider integrations.

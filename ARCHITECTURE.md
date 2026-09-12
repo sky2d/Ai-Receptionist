@@ -26,7 +26,8 @@ flowchart TD
 - `apps/web`: Frontend Next.js app.
 - `apps/api`: Backend FastAPI app.
 - `packages/`: Shared packages across apps (e.g. `shared-types`).
-- `infrastructure/`: Deployment and orchestration.
+- **Database:** Supabase (Managed PostgreSQL), pgvector
+- **Infrastructure:** Local development (Native), Vercel (Frontend), Railway/Render (Backend)
 
 ## 4. Frontend Architecture
 Next.js using App Router, TypeScript, Tailwind CSS, and shadcn/ui.
@@ -69,7 +70,7 @@ A generic `CalendarProvider` interface will abstract Google Calendar and Microso
 pgvector with embedded knowledge base chunks for business-specific contexts.
 
 ## 13. Database Architecture
-Core entities: `User`, `Business`, `Service`, `Customer`, `Conversation`, `Message`, `Appointment`, `Integration`, `KnowledgeDocument`, `KnowledgeChunk`.
+Core entities: `User`, `Business`, `Service`, `Customer`, `Conversation`, `Message`, `Appointment`, `Integration`, `KnowledgeDocument`, `KnowledgeChunk`. We rely on Supabase as the managed Postgres provider.
 
 ## 14. Multi-tenancy
 All resources must be scoped to a `business_id`.
@@ -84,7 +85,7 @@ Standardized error types (`ValidationError`, `IntegrationError`, `LLMError`, etc
 Centralized application logs, AI logs (latency, token usage, tool calls), and integration logs.
 
 ## 18. Deployment Architecture
-Targeting Vercel for frontend and Container-based deployments for backend with Managed PostgreSQL.
+Targeting Vercel for the Next.js frontend, a PaaS (like Render/Railway) for the FastAPI backend, and Supabase for Managed PostgreSQL.
 
 ## 19. Data Flow
 Channel Normalization -> Intent Recognition -> Context Retrieval -> LLM / Tool Execution -> State Update -> Channel Formatting.

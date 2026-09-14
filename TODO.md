@@ -16,7 +16,7 @@ This file tracks the implementation progress of the AI Receptionist platform.
 ## Phase 3: AI agent foundation
 - [x] Implement the core `AgentInterface` and the internal memory schema.
 - [x] Integrate a base LLM provider (e.g., OpenAI/Anthropic) behind the abstraction layer (Skeleton manager created).
-- [ ] Develop the Conversation Engine to handle message routing.
+- [x] Develop the Conversation Engine to handle message routing.
 
 ## Phase 4: Tool calling
 - [x] Implement the Tool Registry.
@@ -44,19 +44,19 @@ This file tracks the implementation progress of the AI Receptionist platform.
 - [x] Normalize incoming SMS payloads into the `NormalizedMessage` format.
 
 ## Phase 9: Voice
-- [ ] Implement the Voice Gateway and Voice Provider integrations.
-- [ ] Integrate Speech-to-Text (STT) and Text-to-Speech (TTS) logic.
-- [ ] Ensure low latency in voice streaming to the Conversation Engine.
+- [x] Implement the Voice Gateway and Voice Provider integrations.
+- [x] Integrate Speech-to-Text (STT) and Text-to-Speech (TTS) logic.
+- [x] Ensure low latency in voice streaming to the Conversation Engine.
 
 ## Phase 10: RAG / Knowledge Base
-- [ ] Set up `pgvector` for embedding storage.
-- [ ] Implement a document ingestion and chunking pipeline.
-- [ ] Provide the agent with a `SearchKnowledgeBase` tool.
+- [x] Set up `pgvector` for embedding storage.
+- [x] Implement a document ingestion and chunking pipeline.
+- [x] Provide the agent with a `SearchKnowledgeBase` tool.
 
 ## Phase 11: Human handoff
-- [ ] Implement escalation rules.
-- [ ] Create a portal view for human agents to intercept live conversations.
-- [ ] Pause the AI agent during human intervention.
+- [x] Implement escalation rules.
+- [x] Create a portal view for human agents to intercept live conversations.
+- [x] Pause the AI agent during human intervention.
 
 ## Phase 12: Analytics and monitoring
 - [ ] Track conversation logs, AI token usage, and latency metrics.

@@ -1,3 +1,5 @@
+import './globals.css';
+
 export const metadata = {
   title: 'AI Receptionist',
   description: 'Manage your AI Receptionist Platform',

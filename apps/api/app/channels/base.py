@@ -1,4 +1,12 @@
 from typing import Protocol, Any, Dict
+from pydantic import BaseModel
+
+class NormalizedMessage(BaseModel):
+    business_id: str
+    conversation_id: str
+    content: str
+    channel: str # 'web', 'sms', 'phone'
+    sender_id: str
 
 class BaseChannel(Protocol):
     """

@@ -24,9 +24,9 @@ This file tracks the implementation progress of the AI Receptionist platform.
 - [x] Map LLM function calls to tool execution logic.
 
 ## Phase 5: Frontend Dashboard Foundation
-- [ ] Set up Next.js app routing for the admin dashboard.
-- [ ] Implement core layout, navigation, and tenant selection UI.
-- [ ] Create shared components with shadcn/ui.
+- [x] Set up Next.js app routing for the admin dashboard.
+- [x] Implement core layout, navigation, and tenant selection UI.
+- [x] Create shared components with shadcn/ui.
 
 ## Phase 6: Google Calendar
 - [ ] Implement the generic `CalendarProvider` interface.

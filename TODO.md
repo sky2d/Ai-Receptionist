@@ -9,9 +9,9 @@ This file tracks the implementation progress of the AI Receptionist platform.
 - [x] Scaffold the backend (FastAPI) and frontend (Next.js) directories and placeholder files.
 
 ## Phase 2: Database + business model
-- [ ] Set up SQLAlchemy models (`User`, `Business`, `Service`, `Customer`, `Conversation`, `Message`, `Appointment`).
-- [ ] Configure Alembic for database migrations.
-- [ ] Establish multitenancy boundaries using `business_id`.
+- [x] Set up SQLAlchemy models (`User`, `Business`, `Service`, `Customer`, `Conversation`, `Message`, `Appointment`).
+- [x] Configure Alembic for database migrations.
+- [x] Establish multitenancy boundaries using `business_id`.
 
 ## Phase 3: AI agent foundation
 - [ ] Implement the core `AgentInterface` and the internal memory schema.

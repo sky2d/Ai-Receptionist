@@ -32,13 +32,40 @@ ai-receptionist/
 
 ## Local Development Setup
 
-1. Copy `.env.example` to `.env` and fill in required variables.
-2. Run Docker Compose:
+1. Copy `.env.example` to `.env` and configure your Supabase `DATABASE_URL` and other variables.
+
+### Running the Backend (FastAPI)
+1. Navigate to the API directory:
    ```bash
-   docker-compose up --build
+   cd apps/api
    ```
-3. Access the API at http://localhost:8000
-4. Access the Web app at http://localhost:3000
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: .\venv\Scripts\Activate.ps1
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Start the backend server:
+   ```bash
+   uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+   ```
+
+### Running the Frontend (Next.js)
+1. Navigate to the Web directory:
+   ```bash
+   cd apps/web
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the frontend development server:
+   ```bash
+   npm run dev
+   ```
 
 ## Environment Variables
 

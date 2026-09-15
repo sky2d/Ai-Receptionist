@@ -18,10 +18,10 @@ class AgentManager:
         architecture scaffolding phase.
         """
         if self.default_provider == "openai":
-            # return OpenAIAgent(...)
-            pass
+            from .openai_agent import OpenAIAgent
+            return OpenAIAgent()
         elif self.default_provider == "anthropic":
             # return AnthropicAgent(...)
             pass
             
-        raise NotImplementedError("Agent implementations are scheduled for a future phase.")
+        raise NotImplementedError(f"Agent implementation for {self.default_provider} is not configured.")

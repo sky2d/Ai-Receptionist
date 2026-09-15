@@ -1,99 +1,49 @@
-# AI Receptionist Platform
+# AI Receptionist
 
-An AI Receptionist platform capable of handling customers through Phone calls, SMS, Website chat, and WhatsApp.
+An advanced, AI-powered voice receptionist system capable of answering phone calls, handling natural conversations, retrieving information from custom documents, and taking smart actions like booking appointments.
 
-## Architecture Overview
+## 🌟 Key Features
+- **Real-Time Voice Calling:** Seamless integration with Twilio to handle live inbound and outbound phone calls.
+- **Lightning-Fast STT (Speech-to-Text):** Uses Deepgram for real-time, highly accurate voice transcription with minimal latency.
+- **Intelligent Conversational Agent:** Powered by OpenAI's LLMs for natural language understanding, context retention, and dynamic response generation.
+- **Human-Like TTS (Text-to-Speech):** Utilizes Edge TTS for generating fluid, natural, and highly responsive voice replies.
+- **Knowledge Base & RAG:** Integrates `pgvector` and `sentence-transformers` for embedding and retrieving knowledge from uploaded documents (PDFs), allowing the AI to answer specific business questions.
+- **Smart Actions & Tool Calling:** The AI can execute dynamic functions during the call, such as checking calendar availability and booking appointments.
+- **Interactive Dashboard:** A comprehensive Next.js web interface to manage AI settings, upload knowledge documents, view call logs, and analyze performance metrics.
+- **Barge-In Support:** Users can interrupt the AI while it's speaking, creating a natural, human-like conversational flow.
 
-The system uses a highly decoupled architecture based on:
-- **Next.js** Frontend
-- **FastAPI** Python Backend
-- **PostgreSQL** Database (with pgvector for future RAG)
+## 🛠️ Tech Stack & Services
 
-For detailed architectural principles, read [ARCHITECTURE.md](ARCHITECTURE.md).
+### Backend (`apps/api`)
+- **Framework:** FastAPI (Python) - High performance, asynchronous API.
+- **Database:** Supabase (PostgreSQL) - Managed database for relational data.
+- **Vector Database:** `pgvector` extension in PostgreSQL for storing document embeddings.
+- **Caching & Message Queue:** Redis - For high-speed data caching and background task management.
+- **ORM & Migrations:** SQLAlchemy and Alembic.
 
-## Technology Stack
+### AI & Third-Party Services
+- **Voice / Telephony:** Twilio
+- **Speech-to-Text (STT):** Deepgram SDK
+- **Text-to-Speech (TTS):** Edge TTS
+- **LLM / Intelligence:** OpenAI (GPT Models)
+- **Embeddings:** `sentence-transformers`
+- **Document Processing:** PyPDF (for parsing knowledge base files)
 
-- **Frontend:** Next.js, TypeScript, Tailwind CSS, shadcn/ui
-- **Backend:** Python, FastAPI, Pydantic, SQLAlchemy
-- **Database:** PostgreSQL, pgvector
-- **Infrastructure:** Docker, Docker Compose
+### Frontend (`apps/web`)
+- **Framework:** Next.js (React) - Built for speed, SEO, and server-side rendering.
+- **Styling:** Tailwind CSS - Utility-first styling for a beautiful, responsive dashboard UI.
 
-## Repository Structure
-
+## 📁 Project Structure
 ```text
-ai-receptionist/
 ├── apps/
-│   ├── web/         # Next.js frontend
-│   └── api/         # FastAPI backend
-├── packages/        # Shared packages and config
-├── docs/            # Project documentation
-├── infrastructure/  # Docker and deployment config
+│   ├── api/          # FastAPI backend microservice (Python)
+│   └── web/          # Next.js frontend dashboard (React)
+├── .github/          # CI/CD workflows and actions
+└── ...
 ```
 
-## Local Development Setup
-
-1. Copy `.env.example` to `.env` and configure your Supabase `DATABASE_URL` and other variables.
-
-### Running the Backend (FastAPI)
-1. Navigate to the API directory:
-   ```bash
-   cd apps/api
-   ```
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\Activate.ps1
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Start the backend server:
-   ```bash
-   uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-   ```
-
-### Running the Frontend (Next.js)
-1. Navigate to the Web directory:
-   ```bash
-   cd apps/web
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the frontend development server:
-   ```bash
-   npm run dev
-   ```
-
-## Environment Variables
-
-See `.env.example` for required environment variables.
-
-## Docker Instructions
-
-The provided `docker-compose.yml` spins up PostgreSQL, Redis, the FastAPI backend, and the Next.js frontend. It is meant for local development only.
-
-## Development Roadmap
-
-- [x] **Phase 1:** Project architecture
-- [ ] **Phase 2:** Database + business model
-- [ ] **Phase 3:** AI agent foundation
-- [ ] **Phase 4:** Tool calling
-- [ ] **Phase 5:** Google Calendar
-- [ ] **Phase 6:** Web chat
-- [ ] **Phase 7:** SMS
-- [ ] **Phase 8:** Voice
-- [ ] **Phase 9:** RAG / Knowledge Base
-- [ ] **Phase 10:** Human handoff
-- [ ] **Phase 11:** Analytics and monitoring
-- [ ] **Phase 12:** Production hardening
-
-## Future Integrations
-
-- [ ] Twilio (Voice/SMS)
-- [ ] Vapi / Realtime voice providers
-- [ ] Google Calendar
-- [ ] Microsoft Outlook Calendar
-- [ ] OpenAI / Anthropic / Local models
+## 🚀 Getting Started
+1. Clone the repository.
+2. Configure `.env` variables using `.env.example` as a template (requires keys for Twilio, Deepgram, OpenAI, and Supabase).
+3. Start the backend with FastAPI / Uvicorn.
+4. Start the frontend with Next.js development server.
